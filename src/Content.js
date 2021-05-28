@@ -15,8 +15,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import ChatBubble from './ChatBubble';
 import IMG1 from './bot-1.png';
 import IMG2 from './child.png';
-// import { scrollToElementId } from 'utils/DomUtils';
-// import { speakChaiBot } from 'utils/VoiceUtils';
+import { scrollToElementId } from './utils';
+import { speakChaiBot } from './utils';
 
 const Defaultmessage = [
   {
@@ -126,7 +126,7 @@ const Content = () => {
         };
         msg[msg.length - 1] = obj1;
         if (isEnableSpeach) {
-          // speakChaiBot(res.answers);
+          speakChaiBot(res.answers);
         }
       }
     } catch (err) {
@@ -135,7 +135,7 @@ const Content = () => {
 
     setMessages([]);
     setMessages(msg);
-    // scrollToElementId('chat-input');
+    scrollToElementId('chat-input');
 
     if (isListening) {
       setIsListening(false);
